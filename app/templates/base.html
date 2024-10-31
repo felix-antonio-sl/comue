@@ -1,3 +1,4 @@
+<!-- app/templates/base.html -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -10,7 +11,14 @@
         <h1>Co-Mue</h1>
         <nav>
             <a href="{{ url_for('main.lista_atenciones') }}">Atenciones</a>
-            <a href="{{ url_for('main.crear_atencion') }}">Crear Atención</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('main.crear_atencion') }}">Crear Atención</a>
+                <span>Bienvenido, {{ current_user.email }}</span>
+                <a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}">Iniciar Sesión</a>
+                <a href="{{ url_for('auth.register') }}">Registrarse</a>
+            {% endif %}
         </nav>
     </header>
     <main>

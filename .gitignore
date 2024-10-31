@@ -3,13 +3,11 @@ __pycache__/
 *.py[cod]
 *.pyo
 
-# Archivos de configuración
+# Archivos de configuración sensibles
 .env
 
 # Entorno virtual
 venv/
-.env/
-*.env
 
 # Archivos de logs
 *.log
@@ -37,10 +35,6 @@ instance/
 *.swo
 *.bak
 .DS_Store
-
-# Configuración de Flask
-config.py
-config/*.pyc
 
 # Archivos de despliegue
 *.spec
