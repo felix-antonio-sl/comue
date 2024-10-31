@@ -62,7 +62,7 @@ def detalle_atencion(atencion_id):
     elif form_procesar_historia.validate_on_submit() and form_procesar_historia.submit.data:
         texto_bruto = form_procesar_historia.historia_bruto.data
         historia_actualizada = procesar_historia(paciente.historia or '', texto_bruto)
-        paciente.historia = historia_actualizada
+        paciente.historia = historia_actualizada.text
         db.session.commit()
         flash('Historia procesada y actualizada.', 'success')
         return redirect(url_for('main.detalle_atencion', atencion_id=atencion_id))
@@ -70,7 +70,7 @@ def detalle_atencion(atencion_id):
         texto_bruto = form_procesar_detalle.detalle_bruto.data
         detalle_actualizado = procesar_detalle_atencion(
             paciente.historia or '', atencion.detalle or '', texto_bruto)
-        atencion.detalle = detalle_actualizado
+        atencion.detalle = detalle_actualizado.text
         db.session.commit()
         flash('Detalle de atención procesado y actualizado.', 'success')
         return redirect(url_for('main.detalle_atencion', atencion_id=atencion_id))

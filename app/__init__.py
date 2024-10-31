@@ -16,7 +16,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()
 
-from .models import User
+from .models import User, Paciente, Atencion  # Asegúrate de importar todos los modelos
 
 @login_manager.user_loader
 def load_user(user_id):
