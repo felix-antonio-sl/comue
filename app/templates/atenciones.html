@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Lista de Atenciones{% endblock %}
+{% block content %}
+<h2>Lista de Atenciones</h2>
+<table>
+    <tr>
+        <th>ID Atención</th>
+        <th>RUN Paciente</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+    </tr>
+    {% for atencion in atenciones %}
+    <tr>
+        <td>{{ atencion.id }}</td>
+        <td>{{ atencion.paciente.run }}</td>
+        <td>{{ atencion.creado_en.strftime('%Y-%m-%d %H:%M') }}</td>
+        <td><a href="{{ url_for('main.detalle_atencion', atencion_id=atencion.id) }}">Detalle</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

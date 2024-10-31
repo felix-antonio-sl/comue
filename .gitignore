@@ -1,0 +1,54 @@
+# Entorno de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de configuración
+.env
+
+# Entorno virtual
+venv/
+.env/
+*.env
+
+# Archivos de logs
+*.log
+logs/
+*.out
+*.pid
+
+# Dependencias instaladas
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+pip-log.txt
+
+# Archivos temporales y de desarrollo
+*.sqlite3
+instance/
+*.db
+
+# Archivos de IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+.DS_Store
+
+# Configuración de Flask
+config.py
+config/*.pyc
+
+# Archivos de despliegue
+*.spec
+*.tar.gz
+*.zip
+
+# Archivos de pruebas
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/

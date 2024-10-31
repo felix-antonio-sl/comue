@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Detalle de Atención{% endblock %}
+{% block content %}
+<h2>Detalle de Atención</h2>
+<p><strong>ID Atención:</strong> {{ atencion.id }}</p>
+<p><strong>RUN Paciente:</strong> {{ paciente.run }}</p>
+
+<h3>Historia Clínica</h3>
+<form method="post">
+    <textarea name="historia" rows="10" cols="80">{{ paciente.historia }}</textarea><br>
+    <button type="submit" name="actualizar_historia">Actualizar Historia</button>
+</form>
+
+<h3>Atención Actual</h3>
+<form method="post">
+    <textarea name="detalle" rows="10" cols="80">{{ atencion.detalle }}</textarea><br>
+    <button type="submit" name="actualizar_detalle">Actualizar Atención Actual</button>
+</form>
+
+<h3>Procesar Historia en Bruto</h3>
+<form method="post">
+    <textarea name="historia_bruto" rows="5" cols="80"></textarea><br>
+    <button type="submit" name="procesar_historia_bruto">Procesar Historia en Bruto</button>
+</form>
+
+<h3>Procesar Atención Actual en Bruto</h3>
+<form method="post">
+    <textarea name="detalle_bruto" rows="5" cols="80"></textarea><br>
+    <button type="submit" name="procesar_detalle_bruto">Procesar Atención Actual en Bruto</button>
+</form>
+{% endblock %}

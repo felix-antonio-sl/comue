@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Crear Nueva Atención{% endblock %}
+{% block content %}
+<h2>Crear Nueva Atención</h2>
+<form method="post" action="{{ url_for('main.crear_atencion') }}">
+    <label for="run">RUN del Paciente:</label>
+    <input type="text" name="run" id="run" required>
+    <button type="submit">Crear Atención</button>
+</form>
+{% endblock %}
