@@ -5,9 +5,6 @@ from dotenv import load_dotenv
 # Cargar variables de entorno desde .env
 load_dotenv()
 
-# Inicializar ell.so con la clave de API de OpenAI
-# openai_api_key = os.getenv('OPENAI_API_KEY')
-
 # Inicializar ell con versionado y logging
 ell.init(store='./logdir', verbose=True, autocommit=True)
 
