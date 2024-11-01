@@ -1,5 +1,14 @@
 /* app/static/css/styles.css */
 
+/* Definición de variables de color */
+:root {
+    --purple-dark: #3D0066;
+    --purple-medium: #510087;
+    --purple-light: #5C0099;
+    --yellow-golden: #FDC500;
+    --yellow-bright: #FFD500;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: var(--purple-dark);
     padding: 10px 20px;
     color: white;
 }
@@ -37,9 +46,10 @@ main {
 }
 
 footer {
-    background-color: #f1f1f1;
+    background-color: var(--purple-medium);
     padding: 10px 20px;
     text-align: center;
+    color: white;
 }
 
 .flashes {
@@ -50,21 +60,22 @@ footer {
 .flashes li {
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 4px;
 }
 
 .flashes .success {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: var(--yellow-golden);
+    color: var(--purple-dark);
 }
 
 .flashes .error {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: var(--purple-light);
+    color: white;
 }
 
 .flashes .warning {
-    background-color: #fff3cd;
-    color: #856404;
+    background-color: var(--yellow-bright);
+    color: var(--purple-medium);
 }
 
 form div {
@@ -77,16 +88,20 @@ form textarea {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    border: 1px solid var(--purple-medium);
+    border-radius: 4px;
 }
 
 form input[type="submit"] {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: var(--purple-medium);
     border: none;
     color: white;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: var(--purple-light);
 }
