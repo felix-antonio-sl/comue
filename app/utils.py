@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Inicializar ell con versionado y logging
-ell.init(store='./logdir', verbose=True, autocommit=True)
+ell.init(store="./logdir", verbose=True, autocommit=True)
+
 
 @ell.complex(model="gpt-4o-mini")
 def procesar_historia(historia_actual: str, texto_bruto: str) -> str:
@@ -24,8 +25,11 @@ def procesar_historia(historia_actual: str, texto_bruto: str) -> str:
     Por favor, genera una historia clínica actualizada y coherente.
     """
 
+
 @ell.complex(model="gpt-4o-mini")
-def procesar_detalle_atencion(historia_paciente: str, detalle_actual: str, texto_bruto: str) -> str:
+def procesar_detalle_atencion(
+    historia_paciente: str, detalle_actual: str, texto_bruto: str
+) -> str:
     """
     Eres un asistente médico que ayuda a actualizar detalles de atenciones.
     Basándote en la historia del paciente y el nuevo texto en bruto, genera un detalle de atención actualizado.
