@@ -9,6 +9,7 @@ from logging.handlers import RotatingFileHandler
 import os
 import ell
 from flask_login import LoginManager
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -36,6 +37,8 @@ def create_app(config_class=DevelopmentConfig):
     login_manager.login_view = "auth.login"
     login_manager.login_message_category = "info"
 
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
+    
     from .routes.main import main as main_bp
 
     app.register_blueprint(main_bp)

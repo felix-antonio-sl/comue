@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 # Cargar variables de entorno desde .env
 load_dotenv()
 
-# Inicializar ell con versionado y logging
-ell.init(store="./logdir", verbose=True, autocommit=True)
-
-
 @ell.complex(model="gpt-4o-mini")
 def procesar_historia(historia_actual: str, texto_bruto: str) -> str:
     """
